@@ -26,6 +26,7 @@ const ButtonWrapper = styled.div`
 `;
 const TodoContent = styled.div``;
 const TodoItem = ({ data, setUpdatedList, todoList }) => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const access_token = JSON.parse(localStorage.getItem("access_token"));
   const [isEdit, setIsEdit] = useState(false);
   const [editTodo, setEditTodo] = useState({
@@ -43,7 +44,7 @@ const TodoItem = ({ data, setUpdatedList, todoList }) => {
 
   const submitEditedTodo = () => {
     axios
-      .put(`${process.env.REACT_APP_API_URL}todos/${id}`, editTodo, {
+      .put(`${PROXY}todos/${id}`, editTodo, {
         headers: { Authorization: `Bearer ${access_token}` },
       })
       .then(() => {
@@ -70,7 +71,7 @@ const TodoItem = ({ data, setUpdatedList, todoList }) => {
   const deleteTodo = () => {
     if (window.confirm("정말로 삭제하실건가요?")) {
       axios
-        .delete(`${process.env.REACT_APP_API_URL}todos/${id}`, {
+        .delete(`${PROXY}todos/${id}`, {
           headers: { Authorization: `Bearer ${access_token}` },
         })
         .then(() => {

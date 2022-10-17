@@ -11,12 +11,13 @@ const Container = styled.div`
   padding: 15px;
 `;
 const ToDo = () => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const [todoList, setToDoList] = useState([]);
   const access_token = JSON.parse(localStorage.getItem("access_token"));
   useEffect(() => {
     const getTodoList = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}todos`, {
+        const res = await axios.get(`${PROXY}todos`, {
           headers: { Authorization: `Bearer ${access_token}` },
         });
         setToDoList(res.data);

@@ -18,6 +18,7 @@ export const Title = styled.div`
 `;
 
 const SignUp = () => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const [signUpInfo, setSignUpInfo] = useState({
     email: "",
     password: "",
@@ -60,7 +61,7 @@ const SignUp = () => {
   const trySignUp = () => {
     if (isValidEmail(signUpInfo.email) && isValidPW(signUpInfo.password)) {
       axios
-        .post(`${process.env.REACT_APP_API_URL}auth/signup`, signUpInfo)
+        .post(`${PROXY}auth/signup`, signUpInfo)
         .then(() => {
           alert("회원가입에 성공했습니다. 로그인 해주세요 :)");
           setSignUpInfo({

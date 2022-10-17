@@ -7,6 +7,7 @@ import { Container, Title } from "./Signup";
 import { MSG_04 } from "../../constants/messages";
 
 const SignIn = () => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const navigate = useNavigate();
   const [loginInfo, setLoginInfo] = useState({
     email: "",
@@ -24,7 +25,7 @@ const SignIn = () => {
       return;
     }
     axios
-      .post(`${process.env.REACT_APP_API_URL}auth/signin`, loginInfo)
+      .post(`${PROXY}auth/signin`, loginInfo)
       .then((res) => {
         localStorage.setItem(
           "access_token",

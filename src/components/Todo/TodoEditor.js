@@ -28,6 +28,7 @@ export const Textarea = styled.textarea`
   }
 `;
 const TodoEditor = ({ todoList, setUpdatedList }) => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const access_token = JSON.parse(localStorage.getItem("access_token"));
   const [content, setContent] = useState("");
   const contentRef = useRef();
@@ -38,7 +39,7 @@ const TodoEditor = ({ todoList, setUpdatedList }) => {
     }
     axios
       .post(
-        `${process.env.REACT_APP_API_URL}todos`,
+        `${PROXY}todos`,
         { todo: content },
         {
           headers: { Authorization: `Bearer ${access_token}` },
