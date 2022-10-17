@@ -18,7 +18,7 @@ const ToDo = () => {
   useEffect(() => {
     const getTodoList = async () => {
       try {
-        const res = await axios.get(`${PROXY}todos`, {
+        const res = await axios.get(`${PROXY}/todos`, {
           headers: { Authorization: `Bearer ${access_token}` },
         });
         setToDoList(res.data);

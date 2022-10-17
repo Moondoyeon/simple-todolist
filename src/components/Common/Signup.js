@@ -61,7 +61,7 @@ const SignUp = () => {
   const trySignUp = () => {
     if (isValidEmail(signUpInfo.email) && isValidPW(signUpInfo.password)) {
       axios
-        .post(`${PROXY}auth/signup`, signUpInfo)
+        .post(`${PROXY}/auth/signup`, signUpInfo)
         .then(() => {
           alert("회원가입에 성공했습니다. 로그인 해주세요 :)");
           setSignUpInfo({

@@ -44,7 +44,7 @@ const TodoItem = ({ data, setUpdatedList, todoList }) => {
 
   const submitEditedTodo = () => {
     axios
-      .put(`${PROXY}todos/${id}`, editTodo, {
+      .put(`${PROXY}/todos/${id}`, editTodo, {
         headers: { Authorization: `Bearer ${access_token}` },
       })
       .then(() => {
@@ -71,7 +71,7 @@ const TodoItem = ({ data, setUpdatedList, todoList }) => {
   const deleteTodo = () => {
     if (window.confirm("정말로 삭제하실건가요?")) {
       axios
-        .delete(`${PROXY}todos/${id}`, {
+        .delete(`${PROXY}/todos/${id}`, {
           headers: { Authorization: `Bearer ${access_token}` },
         })
         .then(() => {

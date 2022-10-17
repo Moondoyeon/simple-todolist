@@ -39,7 +39,7 @@ const TodoEditor = ({ todoList, setUpdatedList }) => {
     }
     axios
       .post(
-        `${PROXY}todos`,
+        `${PROXY}/todos`,
         { todo: content },
         {
           headers: { Authorization: `Bearer ${access_token}` },

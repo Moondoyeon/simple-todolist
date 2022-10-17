@@ -25,7 +25,7 @@ const SignIn = () => {
       return;
     }
     axios
-      .post(`${PROXY}auth/signin`, loginInfo)
+      .post(`${PROXY}/auth/signin`, loginInfo)
       .then((res) => {
         localStorage.setItem(
           "access_token",
