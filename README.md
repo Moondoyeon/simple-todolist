@@ -6,7 +6,7 @@ yarn start
 ```
 
 ## 😃 배포
-배포링크 https://wanted-frontend-assignment-moondoyeon.netlify.app/todo
+배포링크 https://wanted-frontend-assignment-moondoyeon.netlify.app/
 
 ## 🎬 데모 영상
 ### 1.회원가입 & 로그인
