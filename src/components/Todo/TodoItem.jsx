@@ -31,6 +31,9 @@ const TodoWrapper = styled.div`
     cursor: pointer;
     width: 20px;
   }
+  .completed {
+    text-decoration: line-through;
+  }
 `;
 const ButtonWrapper = styled.div`
   display: flex;
@@ -38,11 +41,7 @@ const ButtonWrapper = styled.div`
     margin-left: 3px;
   }
 `;
-const TodoContent = styled.div`
-  .completed {
-    text-decoration: line-through;
-  }
-`;
+const TodoContent = styled.div``;
 const TodoItem = ({ data }) => {
   const [isEdit, setIsEdit] = useState(false);
   const [editTodo, setEditTodo] = useState({
