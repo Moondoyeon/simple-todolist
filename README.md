@@ -2,6 +2,10 @@
 ## 😃 Intro
 심플심플 투두리스트 입니다.
 <a href="https://simple-simple-todolist.netlify.app/">배포링크 바로가기</a>
+테스트 계정
+<br/>
+<div>id: test774@naver.com</div>
+pw: test774!
 
 
 ## 🎬 리팩토링 데모
