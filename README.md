@@ -1,3 +1,8 @@
+
+## 😃 배포
+<a href="https://simple-simple-todolist.netlify.app/">배포링크 바로가기</a>
+
+
 ## 🎬 리팩토링 데모
 
 | 회원가입                                                                                                          | 로그인                                                                                                            |
@@ -5,6 +10,17 @@
 | ![signup](https://user-images.githubusercontent.com/102936206/199159308-72241357-7923-41ea-a480-5ef018e07368.gif) | ![login](https://user-images.githubusercontent.com/102936206/199159824-dcfbe09f-032c-4b8e-8fc8-5301a4b8045d.gif)  |
 | 할일 추가,조회                                                                                                    | 할일 수정,삭제                                                                                                    |
 | ![todoCR](https://user-images.githubusercontent.com/102936206/199160116-a782756d-c909-4098-a0a5-25f48f8a86bf.gif) | ![todoUD](https://user-images.githubusercontent.com/102936206/199160529-82f73f8f-3873-43c9-9678-71e95498f503.gif) |
+
+## 🎬 리팩토링 전 데모
+### 1.회원가입 & 로그인
+![signupIn](https://user-images.githubusercontent.com/102936206/196187399-35908940-e83c-4121-97f2-1917b3ec5aeb.gif)
+
+### 2.할일 추가, 조회
+![todoCR](https://user-images.githubusercontent.com/102936206/196187484-15f181a5-c44f-4bd3-b450-896318ff6cfc.gif)
+
+### 3.할일 수정, 삭제
+![todoUD](https://user-images.githubusercontent.com/102936206/196187536-b84de763-8eca-422f-8752-7778569233ea.gif)
+
 
 ## 🛠 리팩토링 방향
 
@@ -259,4 +275,12 @@ function App() {
     ...
   );
 }
+```
+
+
+## 📚 프로젝트 실행방법
+```
+yarn install
+yarn start
+
 ```
