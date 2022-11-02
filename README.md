@@ -1,5 +1,6 @@
 
-## 😃 배포
+## 😃 Intro
+심플심플 투두리스트 입니다.
 <a href="https://simple-simple-todolist.netlify.app/">배포링크 바로가기</a>
 
 
@@ -12,14 +13,9 @@
 | ![todoCR](https://user-images.githubusercontent.com/102936206/199160116-a782756d-c909-4098-a0a5-25f48f8a86bf.gif) | ![todoUD](https://user-images.githubusercontent.com/102936206/199160529-82f73f8f-3873-43c9-9678-71e95498f503.gif) |
 
 ## 🎬 리팩토링 전 데모
-### 1.회원가입 & 로그인
-![signupIn](https://user-images.githubusercontent.com/102936206/196187399-35908940-e83c-4121-97f2-1917b3ec5aeb.gif)
-
-### 2.할일 추가, 조회
-![todoCR](https://user-images.githubusercontent.com/102936206/196187484-15f181a5-c44f-4bd3-b450-896318ff6cfc.gif)
-
-### 3.할일 수정, 삭제
-![todoUD](https://user-images.githubusercontent.com/102936206/196187536-b84de763-8eca-422f-8752-7778569233ea.gif)
+1.회원가입 & 로그인|2.할일 추가, 조회|3.할일 수정, 삭제
+-|-|-|
+![signupIn](https://user-images.githubusercontent.com/102936206/196187399-35908940-e83c-4121-97f2-1917b3ec5aeb.gif)|![todoCR](https://user-images.githubusercontent.com/102936206/196187484-15f181a5-c44f-4bd3-b450-896318ff6cfc.gif)|![todoUD](https://user-images.githubusercontent.com/102936206/196187536-b84de763-8eca-422f-8752-7778569233ea.gif)
 
 
 ## 🛠 리팩토링 방향
