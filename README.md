@@ -4,7 +4,7 @@
 
 
 ## 😃 배포
-배포링크 https://wanted-frontend-assignment-moondoyeon.netlify.app/
+<a href="https://simple-simple-todolist.netlify.app/">배포링크 바로가기</a>
 
 ## 🎬 데모 영상
 ### 1.회원가입 & 로그인
