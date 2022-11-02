@@ -1,27 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import "./App.css";
-import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import Auth from "./pages/Auth";
 import ToDo from "./pages/ToDo";
+import AuthRoute from "./routes/AuthRoute";
+import { AlertModalProvider } from "./context/alertModalContext";
 
 function App() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const token = localStorage.getItem("access_token");
-    if (token) {
-      navigate("/todo");
-    } else {
-      navigate("/");
-    }
-  }, []);
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/todo" element={<ToDo />} />
-      </Routes>
+      <AlertModalProvider>
+        <Routes>
+          <Route path="/" element={<AuthRoute element={<Auth />} destination="/todo" reversed />} />
+          <Route path="/todo" element={<AuthRoute element={<ToDo />} destination="/" />} />
+        </Routes>
+      </AlertModalProvider>
     </div>
   );
 }
