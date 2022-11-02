@@ -1,9 +1,7 @@
-## 😈 원티드 프리온보딩 프론트엔드 - 선발 과제
-## 📚 프로젝트 실행방법
-```
-yarn install
-yarn start
-```
+## ✏️ 리팩토링
+<a href="https://github.com/Moondoyeon/simple-todolist/tree/refactoring">리팩토링 바로가기</a>
+
+
 
 ## 😃 배포
 배포링크 https://wanted-frontend-assignment-moondoyeon.netlify.app/
@@ -17,3 +15,9 @@ yarn start
 
 ### 3.할일 수정, 삭제
 ![todoUD](https://user-images.githubusercontent.com/102936206/196187536-b84de763-8eca-422f-8752-7778569233ea.gif)
+
+## 📚 프로젝트 실행방법
+```
+yarn install
+yarn start
+```
