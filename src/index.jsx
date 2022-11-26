@@ -6,14 +6,17 @@ import { ThemeProvider } from "styled-components";
 import { colors } from "./styles/theme";
 import TodoListContextProvider from "./context/todoListContext";
 import GlobalStyle from "./styles/GlobalStyle";
+import { AlertModalProvider } from "./context/alertModalContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <TodoListContextProvider>
-      <ThemeProvider theme={colors}>
-        <GlobalStyle />
-        <App />
-      </ThemeProvider>
-    </TodoListContextProvider>
+    <ThemeProvider theme={colors}>
+      <TodoListContextProvider>
+        <AlertModalProvider>
+          <GlobalStyle />
+          <App />
+        </AlertModalProvider>
+      </TodoListContextProvider>
+    </ThemeProvider>
   </BrowserRouter>
 );
