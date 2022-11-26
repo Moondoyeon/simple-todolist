@@ -7,10 +7,11 @@ import DefaultButton from "../../components/UI/button/DefaultButton";
 import { AlertModalContext } from "../../context/alertModalContext";
 import { MSG_01, MSG_02 } from "../../constants/messages";
 import { EMAIL_REGEXP, PW_REGEXP } from "../../constants/regexp";
-import { authAPI } from "../../utils/axiosInstance";
+
 import useAxios from "../../hooks/useAxios";
 import useInput from "../../hooks/useInput";
 import { Container, Title } from "./style";
+import { authAPI } from "../../api/apis";
 
 const Auth = () => {
   const navigate = useNavigate();
