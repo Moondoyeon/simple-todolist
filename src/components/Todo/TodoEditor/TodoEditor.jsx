@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useRef, useContext, useEffect } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import { AlertModalContext } from '../../../context/alertModalContext';
 import DefaultButton from '../../UI/button/DefaultButton';
 import { Container, Wrapper, Textarea } from './style';
@@ -16,15 +16,15 @@ const TodoEditor = () => {
   const handlecreateTodo = useAxios(todoAPI.createTodoItem);
   const handleGetTodoList = useAxios(todoAPI.getTodoList);
 
-  const handleContentChange = e => {
+  const handleContentChange = (e) => {
     setContent(e.target.value);
   };
   useEffect(() => {
     handleGetTodoList([], {
-      onSuccess: data => {
+      onSuccess: (data) => {
         getTodoList(data);
       },
-      onError: msg => alertModal.show(msg),
+      onError: (msg) => alertModal.show(msg),
     });
     contentRef.current.focus();
   }, []);
@@ -35,11 +35,11 @@ const TodoEditor = () => {
       return;
     }
     handlecreateTodo([content], {
-      onSuccess: result => {
+      onSuccess: (result) => {
         addTodo(result);
         setContent('');
       },
-      onError: msg => alertModal.show(msg),
+      onError: (msg) => alertModal.show(msg),
     });
   };
 
