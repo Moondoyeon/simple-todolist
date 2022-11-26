@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { useMemo } from 'react';
 import { useContext } from 'react';
 
 const TodoListContext = React.createContext({
@@ -12,24 +13,27 @@ export const useTodoDispatch = () => useContext(TodoDispatchContext);
 
 const TodoListContextProvider = ({ children }) => {
   const [todoList, setTodoList] = useState([]);
-  const getTodoList = todoList => {
+  const getTodoList = useCallback((todoList) => {
     setTodoList(todoList);
-  };
-  const addTodo = newTodo => {
-    setTodoList(prev => [...prev, newTodo]);
-  };
-  const updateTodo = editedTodo => {
-    setTodoList(prev => prev.map(el => (el.id === editedTodo.id ? editedTodo : el)));
-  };
-  const deleteTodo = id => {
-    setTodoList(prev => prev.filter(el => el.id !== id));
-  };
-  const todoDispatch = {
-    getTodoList,
-    addTodo,
-    updateTodo,
-    deleteTodo,
-  };
+  }, []);
+  const addTodo = useCallback((newTodo) => {
+    setTodoList((prev) => [newTodo, ...prev]);
+  }, []);
+  const updateTodo = useCallback((editedTodo) => {
+    setTodoList((prev) => prev.map((el) => (el.id === editedTodo.id ? editedTodo : el)));
+  }, []);
+  const deleteTodo = useCallback((id) => {
+    setTodoList((prev) => prev.filter((el) => el.id !== id));
+  }, []);
+  const todoDispatch = useMemo(
+    () => ({
+      getTodoList,
+      addTodo,
+      updateTodo,
+      deleteTodo,
+    }),
+    [getTodoList, addTodo, updateTodo, deleteTodo]
+  );
   return (
     <TodoListContext.Provider value={{ todoList }}>
       <TodoDispatchContext.Provider value={todoDispatch}>{children}</TodoDispatchContext.Provider>

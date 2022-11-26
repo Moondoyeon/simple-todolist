@@ -1,13 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useContext, useState } from "react";
+import React, { useContext, useState } from 'react';
 
-import { useTodoDispatch } from "../../../context/todoListContext";
-import { AlertModalContext } from "../../../context/alertModalContext";
-import DefaultButton from "../../UI/button/DefaultButton";
-import useAxios from "../../../hooks/useAxios";
-import { todoAPI } from "../../../api/apis";
-import { Textarea } from "../TodoEditor/style";
-import { ItemContainer, TodoWrapper, ButtonWrapper, TodoContent } from "./style";
+import { useTodoDispatch } from '../../../context/todoListContext';
+import { AlertModalContext } from '../../../context/alertModalContext';
+import DefaultButton from '../../UI/button/DefaultButton';
+import useAxios from '../../../hooks/useAxios';
+import { todoAPI } from '../../../api/apis';
+import { Textarea } from '../TodoEditor/style';
+import { ItemContainer, TodoWrapper, ButtonWrapper, TodoContent } from './style';
 
 const TodoItem = ({ id, todo, isCompleted }) => {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -67,13 +66,8 @@ const TodoItem = ({ id, todo, isCompleted }) => {
             <Textarea value={editTodo.todo} onChange={handleContentChange} />
           </TodoWrapper>
           <ButtonWrapper>
-            <DefaultButton
-              text={"제출"}
-              type={"mint"}
-              width={"short"}
-              onClick={submitUpdatedTodo}
-            />
-            <DefaultButton text={"취소"} width={"short"} onClick={editModHanlder} />
+            <DefaultButton text={'제출'} type={'mint'} width={'short'} onClick={submitUpdatedTodo} />
+            <DefaultButton text={'취소'} width={'short'} onClick={editModHanlder} />
           </ButtonWrapper>
         </>
       ) : (
@@ -86,15 +80,15 @@ const TodoItem = ({ id, todo, isCompleted }) => {
               onClick={handleIsCompleteCheckBox}
               className="checkbox"
             />
-            <TodoContent className={isCompleted ? "completed" : ""}>{todo}</TodoContent>
+            <TodoContent className={isCompleted ? 'completed' : ''}>{todo}</TodoContent>
           </TodoWrapper>
           <ButtonWrapper>
-            <DefaultButton text={"수정"} type={"mint"} width={"short"} onClick={editModHanlder} />
-            <DefaultButton text={"삭제"} type={"red"} width={"short"} onClick={deleteTodoItem} />
+            <DefaultButton text={'수정'} type={'mint'} width={'short'} onClick={editModHanlder} />
+            <DefaultButton text={'삭제'} type={'red'} width={'short'} onClick={deleteTodoItem} />
           </ButtonWrapper>
         </>
       )}
     </ItemContainer>
   );
 };
-export default TodoItem;
+export default React.memo(TodoItem);
