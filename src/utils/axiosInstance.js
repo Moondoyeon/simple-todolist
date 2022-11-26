@@ -35,13 +35,14 @@ authAxiosInstance.interceptors.response.use(
 );
 
 export const authAPI = {
-  async trySignUp(authInfo) {
-    const res = await axiosInstance.post(`auth/signup`, authInfo);
+  async trySignUp(email, password) {
+    const res = await axiosInstance.post(`auth/signup`, { email, password });
+    console.log(email, password, res);
     return res;
   },
 
-  async trySignIn(authInfo) {
-    const res = await axiosInstance.post(`auth/signin`, authInfo);
+  async trySignIn(email, password) {
+    const res = await axiosInstance.post(`auth/signin`, { email, password });
     return res;
   },
 };
